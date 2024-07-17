@@ -1,6 +1,19 @@
-import me from "../assets/images/me-1.png";
+import me from "../../../assets/images/me-1.png";
 import { useState, useEffect } from "react";
 import TextTransition, { presets } from "react-text-transition";
+import Reveal from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+import About from "./About";
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 // import MyExperience from "./MyExperience";
 const professions = ["Laravel", "React", "Vue"];
 const Home = () => {
@@ -14,40 +27,53 @@ const Home = () => {
   }, []);
   return (
     <>
-      <main className="min-h-screen  flex items-center md:mt-[-124px]">
+      <main className="min-h-screen  flex items-center md:mt-[-136px]">
         <div className="grid grid-cols-2 gap-4 container mx-auto px-4">
           <div className="col-span-2 md:col-span-1 relative z-50">
-            <h3 className="text-xl 2xl:text-3xl my-2">Hello, I'm</h3>
-            <h1 className="text-3xl 2xl:text-7xl">Mohammad Arif</h1>
-            <h1 className="text-3xl 2xl:text-7xl text-brand-color">Laly</h1>
-            <h6 className="text-xl 2xl:text-3xl my-3">
-              I am passionate{" "}
-              <strong className="text-brand-color">Full Stack Developer</strong>{" "}
-              with <strong className="text-brand-color">3 Year's </strong>
-              experience!
-            </h6>
-            <h6 className="text-xl 2xl:text-3xl my-2">
-              I Develop Website Using
-              <strong className="text-brand-color px-4">
-                <TextTransition springConfig={presets.wobbly} inline>
-                  {professions[index % professions.length]}
-                </TextTransition>
-              </strong>
-            </h6>
+            <Reveal
+              keyframes={customAnimation}
+              // childClassName="opacity-0"
+              className="relative"
+              cascade
+            >
+              <h3 className="text-xl  2xl:text-3xl">Hello, I'm</h3>
+              <h1 className="text-3xl 2xl:text-7xl">Mohammad Arif</h1>
+              <h1 className="text-3xl 2xl:text-7xl text-brand-color">Laly</h1>
+              <h6 className="text-xl 2xl:text-3xl my-3">
+                I am passionate{" "}
+                <strong className="text-brand-color">
+                  Full Stack Developer
+                </strong>{" "}
+                with <strong className="text-brand-color">3 Year's </strong>
+                experience!
+              </h6>
+              <h6 className="text-xl 2xl:text-3xl my-2">
+                I Develop Website Using
+                <strong className="text-brand-color px-4">
+                  <TextTransition springConfig={presets.wobbly} inline>
+                    {professions[index % professions.length]}
+                  </TextTransition>
+                </strong>
+              </h6>
 
-            <div className="mt-8">
-              <button className="btn text-xs 2xl:text-3xl relative p-1 border-brand-color border-4 bg-brand-color after:transition-all text-white rounded-2xl px-8 hover:text-brand-color hover:after:w-full after:bg-white after:absolute after:left-0 after:top-0 after:bottom-0  after:rounded-2xl after:w-0 after:visible after:block overflow-hidden">
-                <span className="z-10 relative"> Contact Me</span>
-              </button>
-              <div>
-                <a href=""></a>
+              <div className="mt-8">
+                <button className="btn text-xs 2xl:text-3xl mx-auto relative p-1 border-brand-color border-4 bg-brand-color after:transition-all text-white rounded-2xl px-8 hover:text-brand-color hover:after:w-full after:bg-white after:absolute after:left-0 after:top-0 after:bottom-0  after:rounded-2xl after:w-0 after:visible after:block overflow-hidden">
+                  <span className="z-10 relative "> Contact Me</span>
+                </button>
+                <div>
+                  <a href=""></a>
+                </div>
               </div>
-            </div>
+            </Reveal>
           </div>
-          <div className="col-span-2 md:col-span-1">
+          <Reveal
+            keyframes={customAnimation}
+            duration={2000}
+            className="col-span-2 md:col-span-1 relative z-10"
+          >
             <div className="relative w-fit mx-auto cursor-pointer">
-              <div className="absolute w-full h-full rounded-3xl animate-spin bg-brand-color  z-0 custom-rotate"></div>
-              <div className=" max-w-[200px] lg:max-w-[300px] 2xl:max-w-[400px] rounded-3xl overflow-hidden relative z-20 ">
+              <div className="absolute w-full h-full rounded-3xl animate-spin bg-brand-color  z-0 custom-rotate "></div>
+              <div className=" max-w-[200px] lg:w-[300px] 2xl:min-w-[400px] rounded-3xl overflow-hidden relative z-20 ">
                 <img className="w-full " src={me} alt="" />
               </div>
               <div className="p-3 rounded-2xl bg-[#f55247] absolute -right-7  top-7 z-40 rotate-12">
@@ -118,10 +144,13 @@ const Home = () => {
                 </svg> */}
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
+        <div className="absolute left-10 top-1/2 moving-element w-48 h-48  rounded-full bg-brand-color bg-opacity-15"></div>
+        <div className="absolute -right-8 top-16 moving-element w-20 h-20 rounded-full bg-yellow-100 "></div>
+        <div className="absolute right-16 bottom-16 moving-element animate-delay-500 w-48 h-48 rounded-full bg-orange-100 "></div>
       </main>
-      {/* <MyExperience /> */}
+      <About />
     </>
   );
 };

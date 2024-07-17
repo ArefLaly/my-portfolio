@@ -1,11 +1,11 @@
+import { lazy } from "react";
 
-
-// const ScholarshipPage =lazy(() => import("../pages/Scholarships"))
+const HomePage = lazy(() => import("../pages/Home"));
 
 const PageRoutes = [
   {
-    path: "/test",
-    component: <p>Test Page</p>,
+    path: "/",
+    component: <HomePage />,
   },
 ];
 

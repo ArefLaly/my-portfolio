@@ -4,14 +4,16 @@
 * {
     font-family: "Poppins";
 }
-html,body{
+html,
+body {
     overflow-x: hidden;
 }
-html{
+html {
     cursor: none;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
-.custom-rotate{
+.custom-rotate {
     animation: anime-rotate-main 8s infinite;
 }
 @keyframes anime-rotate-main {
@@ -24,4 +26,26 @@ html{
     100% {
         transform: rotate(-30deg);
     }
+}
+.moving-element {
+    animation: anime-moving-element 9s infinite;
+}
+
+@keyframes anime-moving-element {
+    0% {
+        transform: translateY(-45px);
+        opacity: 0.6;
+    }
+    50% {
+        opacity:1;
+        transform: translateY(45px);
+    }
+    100% {
+        opacity: 0.6;
+        transform: translateY(-45px);
+    }
+}
+
+.animate-delay-500{
+    animation-delay: 500ms;
 }

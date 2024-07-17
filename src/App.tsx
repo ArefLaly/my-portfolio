@@ -1,17 +1,14 @@
 import "./assets/css/index.css";
-import Header from "./components/Header";
-import Home from "./components/Home";
-import CutsomCursor from "./features/template/components/CutsomCursor";
+
+import Layout from "./layouts/v1/Layout";
 import AppRoutes from "./routes/AppRoute";
 
 function App() {
   return (
     <>
-      <Header></Header>
-      <AppRoutes />
-      <Home />
-      <CutsomCursor />
-
+      <Layout>
+        <AppRoutes />
+      </Layout>
     </>
   );
 }
