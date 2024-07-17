@@ -1,4 +1,3 @@
-import me from "../assets/images/me-1.png";
 import { useState, useEffect } from "react";
 import baheer from "../assets/images/baheer.png";
 
@@ -6,7 +5,7 @@ const MyExperience = () => {
   const [index, setIndex] = useState(0);
   useEffect(() => {
     const intervalId = setInterval(
-      () => setIndex((index) => index + 1),
+      () => setIndex(index + 1),
       2000 // every 3 seconds
     );
     return () => clearTimeout(intervalId);

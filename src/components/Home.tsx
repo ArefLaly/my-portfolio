@@ -1,7 +1,7 @@
 import me from "../assets/images/me-1.png";
 import { useState, useEffect } from "react";
 import TextTransition, { presets } from "react-text-transition";
-import MyExperience from "./MyExperience";
+// import MyExperience from "./MyExperience";
 const professions = ["Laravel", "React", "Vue"];
 const Home = () => {
   const [index, setIndex] = useState(0);

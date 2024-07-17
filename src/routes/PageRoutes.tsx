@@ -1,4 +1,4 @@
-import { lazy } from "react";
+
 
 // const ScholarshipPage =lazy(() => import("../pages/Scholarships"))
 

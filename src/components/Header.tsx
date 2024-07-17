@@ -1,5 +1,5 @@
 import { Bars3Icon } from "@heroicons/react/20/solid";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 Header.propTypes = {};
 
 function Header() {

@@ -7,7 +7,7 @@ const CutsomCursor = () => {
   const handleMouseMove = (event: MouseEvent) => {
     setPosition({ x: event.clientX, y: event.clientY });
   };
-  const handleMouseClick = (event: MouseEvent) => {
+  const handleMouseClick = () => {
     setIsZoomedOut(!isZoomedOut);
   };
   useEffect(() => {

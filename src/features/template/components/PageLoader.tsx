@@ -1,7 +1,15 @@
 import React from "react";
-type props = {
-  hasTopLoader?: boolean;
+
+type Props = {
+  hasTopLoader: boolean;
 };
-const PageLoader = ({ hasTopLoader }: props) => <div>Page Loader</div>;
+
+const PageLoader: React.FC<Props> = ({ hasTopLoader }) => {
+  return (
+    <div>
+      Page Loader {hasTopLoader ? "" : ""}
+    </div>
+  );
+};
 
 export default PageLoader;
