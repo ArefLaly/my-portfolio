@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    font-family: "Poppins";
+}
+html,body{
+    overflow-x: hidden;
+}
+html{
+    cursor: none;
+    overflow-x: hidden;
+}
+.custom-rotate{
+    animation: anime-rotate-main 8s infinite;
+}
+@keyframes anime-rotate-main {
+    0% {
+        transform: rotate(-30deg);
+    }
+    50% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(-30deg);
+    }
+}
